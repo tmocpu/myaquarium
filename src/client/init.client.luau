@@ -1,8 +1,9 @@
 --!strict
 
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Controllers = script:WaitForChild("Controllers")
 
-local Shared = ReplicatedStorage:WaitForChild("Shared")
-local Greeting = require(Shared:WaitForChild("Greeting"))
+local PingController = require(Controllers:WaitForChild("PingController"))
 
-print(Greeting.hello("client"))
+PingController.init()
+
+print("[Boot] client ready")

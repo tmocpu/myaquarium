@@ -1,8 +1,11 @@
 --!strict
 
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
+local Services = script:WaitForChild("Services")
 
-local Shared = ReplicatedStorage:WaitForChild("Shared")
-local Greeting = require(Shared:WaitForChild("Greeting"))
+local RemoteRouter = require(Services:WaitForChild("RemoteRouter"))
+local PingService = require(Services:WaitForChild("PingService"))
 
-print(Greeting.hello("server"))
+PingService.init()
+RemoteRouter.init()
+
+print("[Boot] server ready")

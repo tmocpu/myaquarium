@@ -1,0 +1,10 @@
+[package]
+name = "tmocpu/myaquarium"
+version = "0.1.0"
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dependencies]
+ProfileService = "loleris/profileservice@^1.6"
+GoodSignal = "sleitnick/goodsignal@^1.2"
+Promise = "evaera/promise@^4.0"
