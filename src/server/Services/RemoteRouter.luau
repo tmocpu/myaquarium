@@ -45,10 +45,16 @@ local function dispatch(remoteName: string, player: Player, ...: any): any
 	return result
 end
 
-function RemoteRouter.init(): ()
-	(Remotes.Ping :: RemoteFunction).OnServerInvoke = function(player, ...)
-		return dispatch("Ping", player, ...)
+local function bindFunction(remoteName: string, remote: RemoteFunction)
+	remote.OnServerInvoke = function(player, ...)
+		return dispatch(remoteName, player, ...)
 	end
+end
+
+function RemoteRouter.init(): ()
+	bindFunction("Ping", Remotes.Ping :: RemoteFunction)
+	bindFunction("Roll", Remotes.Roll :: RemoteFunction)
+	bindFunction("RequestPlayerData", Remotes.RequestPlayerData :: RemoteFunction)
 end
 
 return RemoteRouter

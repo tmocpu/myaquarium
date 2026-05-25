@@ -37,6 +37,9 @@ end
 
 local Remotes = {
 	Ping = ensureRemote("Ping", "RemoteFunction") :: RemoteFunction,
+	Roll = ensureRemote("Roll", "RemoteFunction") :: RemoteFunction,
+	RequestPlayerData = ensureRemote("RequestPlayerData", "RemoteFunction") :: RemoteFunction,
+	PlayerDataUpdated = ensureRemote("PlayerDataUpdated", "RemoteEvent") :: RemoteEvent,
 }
 
 return Remotes
