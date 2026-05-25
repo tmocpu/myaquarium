@@ -9,11 +9,6 @@
 # Rojo
 sourcemap.json
 
-# Wally (if added later)
-/Packages/
-/ServerPackages/
-/DevPackages/
-
 # Editor / OS
 .vscode/
 .idea/

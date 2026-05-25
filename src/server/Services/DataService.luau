@@ -9,8 +9,8 @@ local Types = require(Shared:WaitForChild("Types"))
 local Constants = require(Shared:WaitForChild("Constants"))
 local Remotes = require(Shared:WaitForChild("Remotes"))
 
-local Packages = ReplicatedStorage:WaitForChild("Packages")
-local ProfileService = require(Packages:WaitForChild("ProfileService")) :: any
+local Server = script.Parent.Parent
+local ProfileService = require(Server:WaitForChild("Vendor"):WaitForChild("ProfileService")) :: any
 
 local RemoteRouter = require(script.Parent:WaitForChild("RemoteRouter"))
 
